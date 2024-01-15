@@ -8,10 +8,11 @@ const ProductList = () => {
   useEffect(() => {
     getProducts();
   }, []);
+
   return (
-    <div>
+    <div style={{ display: "flex", flexWrap: "wrap" }}>
       {products ? (
-        products.map((item) => <ProductCard item={item} />)
+        products.map((item) => <ProductCard key={item.id} item={item} />)
       ) : (
         <h2>Загружаем данные...</h2>
       )}

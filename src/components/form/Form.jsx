@@ -1,6 +1,7 @@
 import { Button, FormControl, TextField } from "@mui/material";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useProducts } from "../context/ProductContextProvider";
+import { Navigate, useNavigate } from "react-router-dom";
 
 const init = {
   title: "",
@@ -12,8 +13,27 @@ const init = {
 };
 
 const Form = ({ isEdit }) => {
-  const { createProduct } = useProducts();
+  const { createProduct, oneProduct, editProduct } = useProducts();
   const [product, setProduct] = useState(init);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (isEdit && oneProduct) {
+      setProduct(oneProduct);
+    }
+  }, [oneProduct]);
+
+  const saveEditedProduct = () => {
+    for (let key in product) {
+      if (!product[key]) {
+        alert("Пустые поля!");
+        return;
+      }
+    }
+    editProduct(product);
+    setProduct(init);
+    navigate("/");
+  };
 
   const handleInput = (e) => {
     if (e.target.name === "price") {
@@ -42,7 +62,7 @@ const Form = ({ isEdit }) => {
       color="success"
     >
       <TextField
-        placeholder="название блюда"
+        label="название блюда"
         variant="outlined"
         name="title"
         fullWidth
@@ -50,7 +70,7 @@ const Form = ({ isEdit }) => {
         value={product.title}
       />
       <TextField
-        placeholder="описание"
+        label="описание"
         variant="outlined"
         name="description"
         fullWidth
@@ -58,7 +78,7 @@ const Form = ({ isEdit }) => {
         value={product.description}
       />
       <TextField
-        placeholder="категория"
+        label="категория"
         variant="outlined"
         name="category"
         fullWidth
@@ -66,7 +86,7 @@ const Form = ({ isEdit }) => {
         value={product.category}
       />
       <TextField
-        placeholder="вес"
+        label="вес"
         variant="outlined"
         name="weight"
         fullWidth
@@ -74,7 +94,7 @@ const Form = ({ isEdit }) => {
         value={product.weight}
       />
       <TextField
-        placeholder="цена"
+        label="цена"
         variant="outlined"
         name="price"
         fullWidth
@@ -82,7 +102,7 @@ const Form = ({ isEdit }) => {
         value={product.price}
       />
       <TextField
-        placeholder="ссылка на фотографию"
+        label="ссылка на фотографию"
         variant="outlined"
         name="picture"
         fullWidth
@@ -91,7 +111,11 @@ const Form = ({ isEdit }) => {
       />
 
       {isEdit ? (
-        <Button variant="contained" sx={{ my: 2, color: "black" }}>
+        <Button
+          onClick={saveEditedProduct}
+          variant="contained"
+          sx={{ my: 2, color: "black" }}
+        >
           Сохранить изменения
         </Button>
       ) : (

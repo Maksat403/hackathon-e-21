@@ -6,11 +6,13 @@ import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { useNavigate } from "react-router-dom";
+import { useProducts } from "../context/ProductContextProvider";
 
 export default function ProductCard({ item }) {
   const navigate = useNavigate();
+  const { deleteProduct } = useProducts();
   return (
-    <Card sx={{ maxWidth: 200 }}>
+    <Card sx={{ maxWidth: 200, m: 2 }}>
       <CardMedia
         onClick={() => navigate(`/details/${item.id}`)}
         sx={{ height: 200 }}
@@ -33,7 +35,12 @@ export default function ProductCard({ item }) {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Тут будет лайк</Button>
+        <Button onClick={() => navigate(`/edit/${item.id}`)} size="small">
+          Изменить
+        </Button>
+        <Button onClick={() => deleteProduct(item.id)} size="small">
+          Удалить
+        </Button>
       </CardActions>
     </Card>
   );

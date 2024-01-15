@@ -1,7 +1,66 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useProducts } from "../components/context/ProductContextProvider";
+import { useParams } from "react-router-dom";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import CardMedia from "@mui/material/CardMedia";
+import Typography from "@mui/material/Typography";
+import { Button, CardActionArea, Container } from "@mui/material";
 
 const DetailsPage = () => {
-  return <div>Detali</div>;
+  const { oneProduct, getOneProduct } = useProducts();
+  console.log(oneProduct);
+
+  const { id } = useParams();
+
+  useEffect(() => {
+    getOneProduct(id);
+  }, []);
+  return (
+    <div>
+      {oneProduct ? (
+        <Container sx={{ mt: 8 }}>
+          <Card sx={{ maxWidth: "100%", mb: 10 }}>
+            <CardActionArea sx={{ height: 600, display: "flex", p: 2 }}>
+              <CardMedia
+                sx={{ width: 500, objectFit: "contain" }}
+                component="img"
+                height="140"
+                image={oneProduct.picture}
+                alt="product"
+              />
+              <CardContent>
+                <Typography gutterBottom variant="h3" component="div">
+                  {oneProduct.title}
+                </Typography>
+                <Typography gutterBottom variant="h5" component="div">
+                  {oneProduct.description}
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  Вес: {oneProduct.weight}г
+                  <br />
+                  {oneProduct.category}
+                </Typography>
+                <br />
+                <Typography gutterBottom variant="h5" component="div">
+                  {oneProduct.price} сом
+                </Typography>
+              </CardContent>
+            </CardActionArea>
+            <Button variant="outlined" sx={{ mr: 2 }}>
+              +
+            </Button>
+            <span>1</span>
+            <Button variant="outlined" sx={{ ml: 2 }}>
+              -
+            </Button>
+          </Card>
+        </Container>
+      ) : (
+        <h1>Загружаем данные...</h1>
+      )}
+    </div>
+  );
 };
 
 export default DetailsPage;
