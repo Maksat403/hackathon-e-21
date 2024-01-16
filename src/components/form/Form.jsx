@@ -52,8 +52,15 @@ const Form = ({ isEdit }) => {
   };
 
   const addProduct = () => {
+    for (let key in product) {
+      if (!product[key]) {
+        alert("Пожайлуста не оставляйте пустые поля!");
+        return;
+      }
+    }
     createProduct(product);
     setProduct(init);
+    navigate("/");
   };
 
   return (

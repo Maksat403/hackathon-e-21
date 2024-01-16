@@ -1,17 +1,15 @@
 import React from "react";
-import ProductList from "../components/product/ProductList";
+import video from "../helpers/assets/GanBey.mp4";
 
 const HomePage = () => {
   return (
-    <div>
-      <section>
-        <div>
-          <h1>
-            <span>Хорошая кухня создает хороших людей.</span>
-          </h1>
-        </div>
-      </section>
-      <ProductList />
+    <div className="video-background">
+      <video autoPlay muted loop id="video-bg">
+        <source src={video} type="video/mp4" />
+      </video>
+      <div className="content">
+        <h1>Вкусная еда начитанется с нас</h1>
+      </div>
     </div>
   );
 };

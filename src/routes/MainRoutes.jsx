@@ -2,26 +2,32 @@ import React from "react";
 import AdminPage from "../pages/AdminPage";
 import EditPage from "../pages/EditPage";
 import { Route, Routes } from "react-router-dom";
-import HomePage from "../pages/HomePage";
+import Menu from "../pages/Menu";
 import DetailsPage from "../pages/DetailsPage";
+import HomePage from "../pages/HomePage";
 
 export const ADMIN_ROUTES = [
   {
+    link: "/",
+    element: <HomePage />,
+    id: 1,
+  },
+  {
     link: "/admin",
     element: <AdminPage />,
-    id: 1,
+    id: 2,
   },
   {
     link: "/edit/:id",
     element: <EditPage />,
-    id: 2,
+    id: 3,
   },
 ];
 
 const PUBLIC_ROUTES = [
   {
-    link: "/",
-    element: <HomePage />,
+    link: "/menu",
+    element: <Menu />,
     id: 1,
   },
   {

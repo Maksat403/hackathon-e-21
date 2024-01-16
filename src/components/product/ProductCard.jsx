@@ -7,6 +7,7 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { useNavigate } from "react-router-dom";
 import { useProducts } from "../context/ProductContextProvider";
+import { Container } from "@mui/material";
 
 export default function ProductCard({ item }) {
   const navigate = useNavigate();
@@ -22,9 +23,11 @@ export default function ProductCard({ item }) {
         <Typography gutterBottom variant="h5" component="div">
           {item.title}
         </Typography>
+
         <Typography variant="body2" color="text.secondary">
           {item.description}
         </Typography>
+
         <br />
         <Typography variant="body2" color="text.secondary">
           Вес: {item.weight}г

@@ -10,21 +10,12 @@
       "id": 1
     },
     {
-      "title": "Борщ",
-      "description": "Подаётся с чесночными сухариками и сметаной.",
-      "category": "Супы",
-      "price": 185,
+      "title": "Китайский суп",
+      "description": "Говяжий бульон, говядина, древесные грибы, огурцы, стебель сельдерея, имбирь, перец чили, фунчоза.",
+      "category": "супы",
+      "price": 288,
       "weight": "450",
-      "picture": "https://staticcontent.mypizza.kg/Dishes/Imperiia_Pitstsyi/v10/Supyi/Borshch/Medium.png?hash=5a4ade6e4833f57818f5149b77dcd2cf",
-      "id": 2
-    },
-    {
-      "title": "Борщ",
-      "description": "Подаётся с чесночными сухариками и сметаной.",
-      "category": "Супы",
-      "price": 185,
-      "weight": "450",
-      "picture": "https://staticcontent.mypizza.kg/Dishes/Imperiia_Pitstsyi/v10/Supyi/Borshch/Medium.png?hash=5a4ade6e4833f57818f5149b77dcd2cf",
+      "picture": "https://staticcontent.mypizza.kg/Dishes/Imperiia_Pitstsyi/v39/Supyi/Kitaiskii_sup/Medium.png?hash=83832b1dc158b52d3be21bda9eb30061",
       "id": 3
     }
   ]
