@@ -166,7 +166,7 @@ export default function Navbar() {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+      <AppBar position="static" sx={{ backgroundColor: "#F93E03" }}>
         <Toolbar>
           <IconButton
             size="large"
