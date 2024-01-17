@@ -10,21 +10,73 @@
       "id": 1
     },
     {
+<<<<<<< HEAD
       "title": "Китайский суп",
       "description": "Говяжий бульон, говядина, древесные грибы, огурцы, стебель сельдерея, имбирь, перец чили, фунчоза.",
       "category": "супы",
       "price": 288,
+=======
+      "title": "Борщ",
+      "description": "Подаётся с чесночными сухариками и сметаной.",
+      "category": "1234",
+      "price": 185,
+>>>>>>> 72820379f4bab8fb8c83d223534492f54382cfab
       "weight": "450",
       "picture": "https://staticcontent.mypizza.kg/Dishes/Imperiia_Pitstsyi/v39/Supyi/Kitaiskii_sup/Medium.png?hash=83832b1dc158b52d3be21bda9eb30061",
       "id": 3
     },
     {
+<<<<<<< HEAD
       "title": "qqq",
       "description": "q",
       "category": "q",
       "price": 1234,
       "weight": "1",
       "picture": "1",
+=======
+      "title": "Острый суп Том Ям",
+      "description": "ррр",
+      "category": "суп",
+      "price": null,
+      "weight": "450гр",
+      "picture": "https://staticcontent.mypizza.kg/Dishes/Imperiia_Pitstsyi/v156/Soup/Ostryii_Sup_Tom_Iam/Medium.png?hash=509c53783e70d1fd52432dd8cba5e040",
+      "id": 3
+    },
+    {
+      "title": "2",
+      "description": "Подаётся с чесночными сухариками и сметаной.",
+      "category": "Супы",
+      "price": 185,
+      "weight": "450",
+      "picture": "https://staticcontent.mypizza.kg/Dishes/Imperiia_Pitstsyi/v10/Supyi/Borshch/Medium.png?hash=5a4ade6e4833f57818f5149b77dcd2cf",
+      "id": 1
+    },
+    {
+      "title": "3",
+      "description": "Подаётся с чесночными сухариками и сметаной.",
+      "category": "1234",
+      "price": 185,
+      "weight": "450",
+      "picture": "https://staticcontent.mypizza.kg/Dishes/Imperiia_Pitstsyi/v10/Supyi/Borshch/Medium.png?hash=5a4ade6e4833f57818f5149b77dcd2cf",
+      "id": 2
+    },
+    {
+      "title": "1",
+      "description": "ррр",
+      "category": "суп",
+      "price": null,
+      "weight": "450гр",
+      "picture": "https://staticcontent.mypizza.kg/Dishes/Imperiia_Pitstsyi/v156/Soup/Ostryii_Sup_Tom_Iam/Medium.png?hash=509c53783e70d1fd52432dd8cba5e040",
+      "id": 3
+    },
+    {
+      "title": "tyu",
+      "description": "tyu",
+      "category": "tyu",
+      "price": null,
+      "weight": "tyu",
+      "picture": "dfgh",
+>>>>>>> 72820379f4bab8fb8c83d223534492f54382cfab
       "id": 4
     }
   ]

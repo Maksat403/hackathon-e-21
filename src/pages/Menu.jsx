@@ -1,6 +1,7 @@
 import React from "react";
-import ProductList from "../components/product/ProductList";
+
 import ImageSlider from "../components/navbar/carousel";
+import ProductList from "../components/product/ProductList";
 
 const Menu = () => {
   return (

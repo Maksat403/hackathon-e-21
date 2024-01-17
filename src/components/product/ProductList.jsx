@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { useProducts } from "../context/ProductContextProvider";
 import ProductCard from "./ProductCard";
 import PaginationControlled from "./pagination";
-import Fv from "./favourite";
 
 const ProductList = () => {
   const { getProducts, products } = useProducts();
@@ -42,5 +41,4 @@ const ProductList = () => {
     </div>
   );
 };
-
 export default ProductList;

@@ -1,7 +1,5 @@
 import React from "react";
 import video from "../helpers/assets/GanBey.mp4";
-import SwipeableTextMobileStepper from "../components/navbar/carousel";
-import ImageSlider from "../components/navbar/carousel";
 
 const HomePage = () => {
   return (
