@@ -3,29 +3,65 @@
     {
       "title": "Борщ",
       "description": "Подаётся с чесночными сухариками и сметаной.",
-      "category": "Супы",
+      "category": "Soup",
       "price": 185,
       "weight": "450",
       "picture": "https://staticcontent.mypizza.kg/Dishes/Imperiia_Pitstsyi/v10/Supyi/Borshch/Medium.png?hash=5a4ade6e4833f57818f5149b77dcd2cf",
       "id": 1
     },
     {
-      "title": "Борщ",
+      "title": "мммпппппппппддддддддд ",
       "description": "Подаётся с чесночными сухариками и сметаной.",
-      "category": "Супы",
-      "price": 185,
+      "category": "soup",
+      "price": 285,
       "weight": "450",
       "picture": "https://staticcontent.mypizza.kg/Dishes/Imperiia_Pitstsyi/v10/Supyi/Borshch/Medium.png?hash=5a4ade6e4833f57818f5149b77dcd2cf",
       "id": 2
     },
     {
-      "title": "Борщ",
-      "description": "Подаётся с чесночными сухариками и сметаной.",
-      "category": "Супы",
-      "price": 185,
-      "weight": "450",
+      "title": "hyeh",
+      "description": "sdfgsfd",
+      "category": "pizza",
+      "price": 65346,
+      "weight": "3455",
       "picture": "https://staticcontent.mypizza.kg/Dishes/Imperiia_Pitstsyi/v10/Supyi/Borshch/Medium.png?hash=5a4ade6e4833f57818f5149b77dcd2cf",
       "id": 3
+    },
+    {
+      "title": "gdf",
+      "description": "fdghdghjg",
+      "category": "soup",
+      "price": 364634,
+      "weight": "2325",
+      "picture": "",
+      "id": 4
+    },
+    {
+      "title": "hgdfjgdgjfghjqqqqqq",
+      "description": "fghdfjf",
+      "category": "Pizza",
+      "price": 4567456,
+      "weight": "6534",
+      "picture": "",
+      "id": 5
+    },
+    {
+      "title": "цццц",
+      "description": "ывапары",
+      "category": "уенкенцке",
+      "price": 456748,
+      "weight": "54645",
+      "picture": "ывв",
+      "id": 6
+    },
+    {
+      "title": "ккккккккккк",
+      "description": "кернкен",
+      "category": "гнонг",
+      "price": 456745,
+      "weight": "6745",
+      "picture": "",
+      "id": 7
     }
   ]
 }

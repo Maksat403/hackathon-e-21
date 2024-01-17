@@ -15,8 +15,9 @@ import AccountCircle from "@mui/icons-material/AccountCircle";
 import MailIcon from "@mui/icons-material/Mail";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import MoreIcon from "@mui/icons-material/MoreVert";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import AdminPanel from "../admin/AdminPanel";
+import { useProducts } from "../context/ProductContextProvider";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -59,6 +60,23 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function Navbar() {
+  //! Поиск
+  const [searchParams, setSearchParams] = useSearchParams(); 
+  const [search, setSearch] = React.useState(searchParams.get('q') || '');
+  const {getProducts} = useProducts();
+
+  React.useEffect(()=>{
+    setSearchParams({
+      q: search,
+    });
+  }, [search]);
+
+  React.useEffect(()=>{
+    getProducts();
+  }, [searchParams]);
+
+  //? setSearch вызван в инпуте StyledInputBase
+
   const navigate = useNavigate();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
@@ -192,6 +210,8 @@ export default function Navbar() {
               <SearchIcon />
             </SearchIconWrapper>
             <StyledInputBase
+              value={search}
+              onChange={(e)=> setSearch(e.target.value)}
               placeholder="Search…"
               inputProps={{ "aria-label": "search" }}
             />

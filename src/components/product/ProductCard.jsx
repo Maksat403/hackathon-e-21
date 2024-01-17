@@ -7,6 +7,7 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { useNavigate } from "react-router-dom";
 import { useProducts } from "../context/ProductContextProvider";
+import StarRating from "./StarRating";
 
 export default function ProductCard({ item }) {
   const navigate = useNavigate();
@@ -42,6 +43,7 @@ export default function ProductCard({ item }) {
           Удалить
         </Button>
       </CardActions>
+        <StarRating/>
     </Card>
   );
 }
