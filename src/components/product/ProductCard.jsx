@@ -7,7 +7,8 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { useNavigate } from "react-router-dom";
 import { useProducts } from "../context/ProductContextProvider";
-import { Container } from "@mui/material";
+import Fv from "./favourite";
+import CreditCardForm from "./CreditCardForm";
 
 export default function ProductCard({ item }) {
   const navigate = useNavigate();
@@ -45,6 +46,8 @@ export default function ProductCard({ item }) {
           Удалить
         </Button>
       </CardActions>
+      <Fv id={item.id} />
+      <CreditCardForm />
     </Card>
   );
 }

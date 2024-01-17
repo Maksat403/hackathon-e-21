@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import { ACTION_PRODUCTS, API_PRODUCTS } from "../../helpers/const";
 import { createContext, useContext, useReducer } from "react";
+import { useNavigate } from "react-router-dom";
 
 const productContext = createContext();
 
@@ -24,6 +25,7 @@ const reducer = (state, action) => {
 };
 
 const ProductContextProvider = ({ children }) => {
+  const navigate = useNavigate();
   const [state, dispatch] = useReducer(reducer, INIT_STATE);
 
   //! CREATE

@@ -109,7 +109,7 @@ export default function Navbar() {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+      <AppBar position="static" sx={{ backgroundColor: "#F93E03" }}>
         <Toolbar>
           <div style={{ display: "flex", gap: 25 }}>
             <Typography
@@ -119,7 +119,7 @@ export default function Navbar() {
               sx={{ display: { xs: "none", sm: "block" } }}
               onClick={() => navigate("/")}
             >
-              ZERNO
+              GANBAI
             </Typography>
 
             <Typography
@@ -129,7 +129,7 @@ export default function Navbar() {
               sx={{ display: { xs: "none", sm: "block" } }}
               onClick={() => navigate("/menu")}
             >
-              Меню
+              MENU
             </Typography>
           </div>
           <Search>

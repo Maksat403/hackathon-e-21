@@ -17,6 +17,15 @@
       "weight": "450",
       "picture": "https://staticcontent.mypizza.kg/Dishes/Imperiia_Pitstsyi/v39/Supyi/Kitaiskii_sup/Medium.png?hash=83832b1dc158b52d3be21bda9eb30061",
       "id": 3
+    },
+    {
+      "title": "qqq",
+      "description": "q",
+      "category": "q",
+      "price": 1234,
+      "weight": "1",
+      "picture": "1",
+      "id": 4
     }
   ]
 }
