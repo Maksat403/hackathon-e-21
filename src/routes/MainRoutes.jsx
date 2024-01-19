@@ -5,22 +5,22 @@ import { Route, Routes } from "react-router-dom";
 import Menu from "../pages/Menu";
 import DetailsPage from "../pages/DetailsPage";
 import HomePage from "../pages/HomePage";
+import Register from "../components/auth/Register";
+import CardPage from "../pages/CardPage";
+import NotFoundPage from "../pages/NotFoundPage";
+import Login from "../components/auth/Login";
+import { ProtectedRouts } from "../helpers/function";
 
 export const ADMIN_ROUTES = [
   {
-    link: "/",
-    element: <HomePage />,
-    id: 1,
-  },
-  {
     link: "/admin",
     element: <AdminPage />,
-    id: 2,
+    id: 1,
   },
   {
     link: "/edit/:id",
     element: <EditPage />,
-    id: 3,
+    id: 2,
   },
 ];
 
@@ -35,14 +35,41 @@ const PUBLIC_ROUTES = [
     element: <DetailsPage />,
     id: 2,
   },
-];
+  {
+    link: "/register",
+    element: <Register />,
+    id: 3,
+  },
+  {
+    link: "/login",
+    element: <Login />,
+    id: 4,
+  },
 
+  {
+    link: "/card",
+    element: <CardPage />,
+    id: 5,
+  },
+  {
+    link: "*",
+    element: <NotFoundPage />,
+    id: 6,
+  },
+  {
+    link: "/",
+    element: <HomePage />,
+    id: 7,
+  },
+];
 const MainRoutes = () => {
   return (
     <Routes>
-      {ADMIN_ROUTES.map((elem) => (
-        <Route path={elem.link} element={elem.element} key={elem.id} />
-      ))}
+      <Route element={<ProtectedRouts />}>
+        {ADMIN_ROUTES.map((elem) => (
+          <Route path={elem.link} element={elem.element} key={elem.id} />
+        ))}
+      </Route>
 
       {PUBLIC_ROUTES.map((elem) => (
         <Route path={elem.link} element={elem.element} key={elem.id} />

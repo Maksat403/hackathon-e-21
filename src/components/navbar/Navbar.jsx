@@ -14,6 +14,9 @@ import AdminPanel from "../admin/AdminPanel";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import { useProducts } from "../context/ProductContextProvider";
+import { Avatar, Tooltip } from "@mui/material";
+import { useAuthContext } from "../context/AuthContextProvider";
+import { ADMIN_USER } from "../../helpers/const";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -45,7 +48,6 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   color: "inherit",
   "& .MuiInputBase-input": {
     padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
     transition: theme.transitions.create("width"),
     width: "100%",
@@ -73,9 +75,16 @@ export default function Navbar() {
 
   //? setSearch вызван в инпуте StyledInputBase
 
+  const { user, logOut } = useAuthContext();
+
+  const handleLogOut = () => {
+    handleMenuClose();
+    logOut();
+  };
+
   const navigate = useNavigate();
   const [anchorEl, setAnchorEl] = React.useState(null);
-  const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
+  const [setMobileMoreAnchorEl] = React.useState(null);
 
   const isMenuOpen = Boolean(anchorEl);
 
@@ -90,10 +99,6 @@ export default function Navbar() {
   const handleMenuClose = () => {
     setAnchorEl(null);
     handleMobileMenuClose();
-  };
-
-  const handleMobileMenuOpen = (event) => {
-    setMobileMoreAnchorEl(event.currentTarget);
   };
 
   const menuId = "primary-search-account-menu";
@@ -113,15 +118,20 @@ export default function Navbar() {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <Link to={"/login"}>
-        <MenuItem onClick={handleMenuClose}>Вход</MenuItem>
-      </Link>
-      <Link to={"/register"}>
-        <MenuItem onClick={handleMenuClose}>Регистрация</MenuItem>
-      </Link>
-      <Link to={"/logout"}>
-        <MenuItem onClick={handleMenuClose}>Выйти</MenuItem>
-      </Link>
+      {user ? (
+        <Link to={"/menu"}>
+          <MenuItem onClick={handleLogOut}>Выйти</MenuItem>
+        </Link>
+      ) : (
+        <>
+          <Link to={"/login"}>
+            <MenuItem onClick={handleMenuClose}>Войти</MenuItem>
+          </Link>
+          <Link to={"/register"}>
+            <MenuItem onClick={handleMenuClose}>Зарегистрироваться</MenuItem>
+          </Link>
+        </>
+      )}
     </Menu>
   );
 
@@ -174,30 +184,60 @@ export default function Navbar() {
             />
           </Search>
 
+          {ADMIN_USER.map((elem, index) =>
+            user && elem.email === user.email ? (
+              <IconButton
+                key={index}
+                size="large"
+                edge="start"
+                color="inherit"
+                aria-label="card"
+                sx={{ mr: 2 }}
+                onClick={() => navigate("/admin")}
+              >
+                <AdminPanel />
+              </IconButton>
+            ) : (
+              ""
+            )
+          )}
+
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: "none", md: "flex" }, gap: "25px" }}>
             <IconButton
-              size="large"
-              edge="end"
-              aria-label="account of current user"
-              aria-controls={menuId}
-              aria-haspopup="true"
-              // onClick={handleProfileMenuOpen}
               color="inherit"
+              aria-label="card"
+              onClick={() => navigate("/card")}
             >
               <ShoppingCartIcon />
             </IconButton>
-            <IconButton
-              size="large"
-              edge="end"
-              aria-label="account of current user"
-              aria-controls={menuId}
-              aria-haspopup="true"
-              onClick={handleProfileMenuOpen}
-              color="inherit"
-            >
-              <AccountCircle />
-            </IconButton>
+            {user ? (
+              <Tooltip title={user.email}>
+                <IconButton
+                  size="large"
+                  edge="end"
+                  aria-label="account of current user"
+                  aria-controls={menuId}
+                  aria-haspopup="true"
+                  onClick={handleProfileMenuOpen}
+                  color="inherit"
+                >
+                  <Avatar alt={user.displayName} src={user.photoUrl} />
+                </IconButton>
+              </Tooltip>
+            ) : (
+              <IconButton
+                size="large"
+                edge="end"
+                aria-label="account of current user"
+                aria-controls={menuId}
+                aria-haspopup="true"
+                onClick={handleProfileMenuOpen}
+                color="inherit"
+              >
+                <AccountCircle />
+              </IconButton>
+            )}
           </Box>
         </Toolbar>
       </AppBar>

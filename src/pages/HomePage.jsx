@@ -1,5 +1,5 @@
 import React from "react";
-import video from "../helpers/assets/GanBey.mp4";
+import video from "../helpers/assets/bgVideo.mp4";
 
 const HomePage = () => {
   return (
@@ -8,7 +8,7 @@ const HomePage = () => {
         <source src={video} type="video/mp4" />
       </video>
       <div className="content">
-        <h1>Вкусная еда начитанется с нас</h1>
+        <h1 style={{ fontFamily: "cursive" }}>Вкусная еда начитанется с нас</h1>
       </div>
     </div>
   );
