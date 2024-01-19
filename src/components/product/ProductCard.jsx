@@ -7,20 +7,27 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { useNavigate } from "react-router-dom";
 import { useProducts } from "../context/ProductContextProvider";
-
-import { Container } from "@mui/material";
 import { ADMIN_USER } from "../../helpers/const";
 import { useAuthContext } from "../context/AuthContextProvider";
-
 import StarRating from "./StarRating";
 import Fv from "./favourite";
-
 export default function ProductCard({ item }) {
   const navigate = useNavigate();
   const { deleteProduct } = useProducts();
   const { user } = useAuthContext();
   return (
-    <Card sx={{ maxWidth: 200, m: 2 }}>
+    <Card
+      sx={{
+        width: { md: "13vw", lg: "16vw" },
+        height: 850,
+        boxShadow: "none",
+        ".MuiOutlinedInput-notchedOutline": { border: 0 },
+        margin: "2%",
+        marginLeft: 15,
+        borderRadius: "12px",
+        overflow: "hidden",
+      }}
+    >
       <CardMedia
         onClick={() => navigate(`/details/${item.id}`)}
         sx={{ height: 200 }}
@@ -53,8 +60,8 @@ export default function ProductCard({ item }) {
           Удалить
         </Button>
       </CardActions>
+      <StarRating id={item.id} />
       <Fv id={item.id} />
-      <StarRating />
 
       {ADMIN_USER.map((elem, index) =>
         user && elem.email === user.email ? (

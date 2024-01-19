@@ -46,25 +46,24 @@ function ImageSlider() {
   };
 
   const handleCallClick = () => {
-    // You can add your logic here to handle the call action
     alert("Calling...");
   };
 
   useEffect(() => {
     const intervalId = setInterval(() => {
       handleNext();
-    }, 5000); // Auto-play interval in milliseconds (adjust as needed)
+    }, 5000);
 
     return () => {
-      clearInterval(intervalId); // Cleanup on component unmount
+      clearInterval(intervalId);
     };
-  }, [activeStep]); // Run effect whenever activeStep changes
+  }, [activeStep]);
 
   return (
     <Box
       sx={{
         position: "relative",
-        maxWidth: 1200,
+        maxWidth: "100%",
         flexGrow: 1,
         overflow: "hidden",
       }}
@@ -88,10 +87,9 @@ function ImageSlider() {
             <Box
               component="img"
               sx={{
-                height: 600,
+                height: "auto",
                 display: "block",
-                maxWidth: 1200,
-                overflow: "hidden",
+                maxWidth: "100%",
                 width: "100%",
                 marginTop: -15,
               }}
@@ -104,11 +102,12 @@ function ImageSlider() {
 
       {/* Back Button */}
       <IconButton
-        style={{
+        sx={{
           position: "absolute",
           top: "50%",
           left: "5%",
           transform: "translateY(-50%)",
+          display: { xs: "none", md: "block" },
         }}
         onClick={handleBack}
         aria-label="Back"
@@ -118,11 +117,12 @@ function ImageSlider() {
 
       {/* Next Button */}
       <IconButton
-        style={{
+        sx={{
           position: "absolute",
           top: "50%",
           right: "5%",
           transform: "translateY(-50%)",
+          display: { xs: "none", md: "block" },
         }}
         onClick={handleNext}
         aria-label="Next"
@@ -134,7 +134,7 @@ function ImageSlider() {
       <Box
         sx={{
           position: "absolute",
-          bottom: "180px",
+          bottom: { xs: "40px", md: "180px" },
           left: "50%",
           transform: "translateX(-50%)",
           display: "flex",
@@ -165,6 +165,7 @@ function ImageSlider() {
           left: "50%",
           transform: "translateX(-50%)",
           textAlign: "center",
+          // display: { xs: "block", md: "none" },
         }}
       >
         <IconButton color="primary" onClick={handleCallClick} aria-label="Call">
@@ -172,13 +173,35 @@ function ImageSlider() {
         </IconButton>
         <Typography
           variant="body1"
-          sx={{ fontSize: "18px", color: "#555", fontWeight: "bold" }}
+          sx={{
+            fontSize: "18px",
+            color: "#555",
+            fontWeight: "bold",
+            "@media (max-width: 600px)": {
+              fontSize: "14px",
+            },
+          }}
         >
           Звоните нам по номерам:
           <br />
-          <a href="tel:+772510707">0(772)510707</a>
-          <a href="tel:+551510707">0(551)510707</a>
-          <a href="tel:+704510707">0(704)510707</a>
+          <a
+            href="tel:+772510707"
+            style={{ textDecoration: "none", color: "#555" }}
+          >
+            0(772)510707
+          </a>{" "}
+          <a
+            href="tel:+551510707"
+            style={{ textDecoration: "none", color: "#555" }}
+          >
+            0(551)510707
+          </a>{" "}
+          <a
+            href="tel:+704510707"
+            style={{ textDecoration: "none", color: "#555" }}
+          >
+            0(704)510707
+          </a>
         </Typography>
       </Box>
     </Box>

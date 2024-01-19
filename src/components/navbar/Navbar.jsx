@@ -157,20 +157,9 @@ export default function Navbar() {
               sx={{ display: { xs: "none", sm: "block" } }}
               onClick={() => navigate("/menu")}
             >
-              Меню
+              MENU
             </Typography>
           </div>
-
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="open drawer"
-            sx={{ mr: 2 }}
-            onClick={() => navigate("/admin")}
-          >
-            <AdminPanel />
-          </IconButton>
 
           <Search>
             <SearchIconWrapper>
@@ -183,7 +172,16 @@ export default function Navbar() {
               inputProps={{ "aria-label": "search" }}
             />
           </Search>
-
+          <IconButton
+            size="large"
+            edge="start"
+            color="inherit"
+            aria-label="open drawer"
+            sx={{ mr: 2 }}
+            onClick={() => navigate("/admin")}
+          >
+            <AdminPanel />
+          </IconButton>
           {ADMIN_USER.map((elem, index) =>
             user && elem.email === user.email ? (
               <IconButton

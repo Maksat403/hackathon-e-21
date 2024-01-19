@@ -10,7 +10,8 @@ const ProductList = () => {
 
   useEffect(() => {
     getProducts();
-  });
+  }, [getProducts]); // Add getProducts as a dependency
+
   const [page, setPage] = useState(1);
   const handleChange = (event, value) => {
     setPage(value);
@@ -24,24 +25,23 @@ const ProductList = () => {
     const end = begin + itemPerPage;
     return products.slice(begin, end);
   }
+
   return (
-    <Box>
+    <div>
       <FilterProduct />
-      <Box
+      <div
         style={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}
       >
-        {products ? (
-          products.map((item) => <ProductCard key={item.id} item={item} />)
-        ) : (
-          <h2>Загружаем данные...</h2>
-        )}
-      </Box>
+        {currentData().map((item) => (
+          <ProductCard key={item.id} item={item} />
+        ))}
+      </div>
       <PaginationControlled
         handleChange={handleChange}
         page={page}
         count={count}
       />
-    </Box>
+    </div>
   );
 };
 

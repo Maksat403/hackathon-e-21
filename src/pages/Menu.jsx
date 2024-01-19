@@ -5,21 +5,30 @@ import ImageSlider from "../components/navbar/carousel";
 const Menu = () => {
   return (
     <div>
-<<<<<<< HEAD
       <section>
         <div>
           <ImageSlider />
-          <h1>
-            <span>Хорошая кухня создает хороших людей.</span>
+          <h1
+            style={{
+              textAlign: "center",
+              fontSize: "28px",
+              color: "#333",
+              margin: "20px 0",
+            }}
+          >
+            <span
+              style={{
+                padding: "5px",
+                color: "black",
+                borderRadius: "5px",
+              }}
+            >
+              Хорошая кухня создает хороших людей.
+            </span>
           </h1>
         </div>
       </section>
-=======
-      <h1>
-        <span>Хорошая кухня создает хороших людей.</span>
-      </h1>
 
->>>>>>> a9a940b414dca453c840c949c44c9d4ef6fed5b1
       <ProductList />
     </div>
   );

@@ -8,10 +8,6 @@ import CardContextProvider from "./components/context/CardContextProvider";
 const App = () => {
   return (
     <div>
-      <ProductContextProvider>
-        <Navbar />
-        <MainRoutes />
-      </ProductContextProvider>
       <CardContextProvider>
         <AuthContextProvider>
           <ProductContextProvider>
