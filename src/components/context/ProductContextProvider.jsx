@@ -37,7 +37,7 @@ const ProductContextProvider = ({ children }) => {
     }
   };
 
-  //! READ
+  //! READ +добавила для поиска `... ${window.location.search}`
   const getProducts = async () => {
     try {
       let res = await axios(`${API_PRODUCTS}/${window.location.search}`);
@@ -46,11 +46,9 @@ const ProductContextProvider = ({ children }) => {
         payload: res,
       });
     } catch (error) {
-      console.error();
-      console.log('worked');
+      console.error(error);
     }
   };
-
   //! DETAILS
 
   const getOneProduct = async (id) => {
@@ -87,7 +85,7 @@ const ProductContextProvider = ({ children }) => {
     }
   };
 
-  //! Фильтрация
+  //! Фильтрация начало
   function fetchByParams(query, value){
     const paramsFromUrl = new URLSearchParams(location.search);
     if(value === "all"){
@@ -98,7 +96,7 @@ const ProductContextProvider = ({ children }) => {
     const url = `${location.pathname}?${paramsFromUrl.toString()}`;
     navigate(url);
   }
-
+// !Фильтрация конец
   const values = {
     createProduct,
     getProducts,

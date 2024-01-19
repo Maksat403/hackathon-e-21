@@ -21,6 +21,7 @@ const StarRating = () => {
   };
 // Звездочки из react-icon (Установила) 
 //  ...Array(5) умножает инпуты (массив в объекте)
+// импорт компонента StarRatingStyle.css
   return (
     <div className="StarRating">
       {[...Array(5)].map((star, i) => {

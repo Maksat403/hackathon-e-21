@@ -60,23 +60,21 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function Navbar() {
-  //! Поиск
+  //! Поиск начало
   const [searchParams, setSearchParams] = useSearchParams(); 
   const [search, setSearch] = React.useState(searchParams.get('q') || '');
   const {getProducts} = useProducts();
 
-  React.useEffect(()=>{
-    setSearchParams({
-      q: search,
-    });
+  React.useEffect(() => {
+    setSearchParams({ q: search });
   }, [search]);
-
-  React.useEffect(()=>{
+  
+  React.useEffect(() => {
     getProducts();
-  }, [searchParams]);
-
+  }, [searchParams, getProducts]);
+  
   //? setSearch вызван в инпуте StyledInputBase
-
+// ! ПОИСК КОНЕЦ
   const navigate = useNavigate();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);

@@ -10,7 +10,7 @@ const ProductList = () => {
   useEffect(() => {
     getProducts();
   });
-
+// ! Вызван FilterProduct
   return (
     <Box>
       <FilterProduct/>

@@ -12,6 +12,7 @@ import StarRating from "./StarRating";
 export default function ProductCard({ item }) {
   const navigate = useNavigate();
   const { deleteProduct } = useProducts();
+  // ! Вызван StarRating в конце
   return (
     <Card sx={{ maxWidth: 200, m: 2 }}>
       <CardMedia
