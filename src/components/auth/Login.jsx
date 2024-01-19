@@ -1,13 +1,5 @@
 import React, { useState } from "react";
-import {
-  Alert,
-  Button,
-  FormControl,
-  FormControlLabel,
-  Grid,
-  TextField,
-  Typography,
-} from "@mui/material";
+import { Alert, Button, Grid, TextField, Typography } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuthContext } from "../context/AuthContextProvider";
 

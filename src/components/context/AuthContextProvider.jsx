@@ -51,6 +51,7 @@ const AuthContextProvider = ({ children }) => {
     } catch (error) {
       console.log(error);
     }
+    navigate("/menu");
   };
 
   const register = (email, password) => {

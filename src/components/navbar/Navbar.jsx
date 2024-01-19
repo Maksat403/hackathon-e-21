@@ -13,8 +13,7 @@ import AccountCircle from "@mui/icons-material/AccountCircle";
 import { Link, useNavigate } from "react-router-dom";
 import AdminPanel from "../admin/AdminPanel";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import { useCardContext } from "../context/CardContextProvider";
-import { Avatar, Badge, Tooltip } from "@mui/material";
+import { Avatar, Tooltip } from "@mui/material";
 import { useAuthContext } from "../context/AuthContextProvider";
 import { ADMIN_USER } from "../../helpers/const";
 
@@ -48,7 +47,6 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   color: "inherit",
   "& .MuiInputBase-input": {
     padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
     transition: theme.transitions.create("width"),
     width: "100%",
@@ -68,7 +66,7 @@ export default function Navbar() {
 
   const navigate = useNavigate();
   const [anchorEl, setAnchorEl] = React.useState(null);
-  const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
+  const [setMobileMoreAnchorEl] = React.useState(null);
 
   const isMenuOpen = Boolean(anchorEl);
 
@@ -83,10 +81,6 @@ export default function Navbar() {
   const handleMenuClose = () => {
     setAnchorEl(null);
     handleMobileMenuClose();
-  };
-
-  const handleMobileMenuOpen = (event) => {
-    setMobileMoreAnchorEl(event.currentTarget);
   };
 
   const menuId = "primary-search-account-menu";

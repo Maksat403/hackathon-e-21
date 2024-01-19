@@ -60,7 +60,7 @@ const CardTable = ({ card }) => {
                     <MenuItem value={3}>3</MenuItem>
                     <MenuItem value={4}>4</MenuItem>
                     <MenuItem value={5}>5</MenuItem>
-                    <MenuItem value={6}>6</MenuItem>
+                    <MenuItem value={""}>Много есть тоже вредно{")"}</MenuItem>
                   </Select>
                 </Box>
                 <Box sx={{ display: "flex", flexDirection: "column", m: 3 }}>

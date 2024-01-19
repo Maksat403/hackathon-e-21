@@ -1,13 +1,4 @@
-import { CheckBox } from "@mui/icons-material";
-import {
-  Alert,
-  Button,
-  FormControl,
-  FormControlLabel,
-  Grid,
-  TextField,
-  Typography,
-} from "@mui/material";
+import { Alert, Button, Grid, TextField, Typography } from "@mui/material";
 import React, { useState } from "react";
 import { useAuthContext } from "../context/AuthContextProvider";
 import { useNavigate } from "react-router-dom";
