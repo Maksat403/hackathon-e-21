@@ -4,3 +4,4 @@ export const ACTION_PRODUCTS = {
   GET_PRODUCTS: "GET_PRODUCTS",
   GET_ONE_PRODUCT: "GET_ONE_PRODUCT",
 };
+export const ADMIN = "admin@admin.com";

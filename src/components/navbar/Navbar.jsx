@@ -10,9 +10,10 @@ import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
 import AccountCircle from "@mui/icons-material/AccountCircle";
-import { Link, useNavigate } from "react-router-dom";
 import AdminPanel from "../admin/AdminPanel";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import { Link, useNavigate, useSearchParams } from "react-router-dom";
+import { useProducts } from "../context/ProductContextProvider";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -55,6 +56,23 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function Navbar() {
+  //! Поиск
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [search, setSearch] = React.useState(searchParams.get("q") || "");
+  const { getProducts } = useProducts();
+
+  React.useEffect(() => {
+    setSearchParams({
+      q: search,
+    });
+  }, [search]);
+
+  React.useEffect(() => {
+    getProducts();
+  }, [searchParams]);
+
+  //? setSearch вызван в инпуте StyledInputBase
+
   const navigate = useNavigate();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
@@ -109,7 +127,7 @@ export default function Navbar() {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+      <AppBar position="static" sx={{ backgroundColor: "#F93E03" }}>
         <Toolbar>
           <div style={{ display: "flex", gap: 25 }}>
             <Typography
@@ -132,15 +150,7 @@ export default function Navbar() {
               Меню
             </Typography>
           </div>
-          <Search>
-            <SearchIconWrapper>
-              <SearchIcon />
-            </SearchIconWrapper>
-            <StyledInputBase
-              placeholder="Search…"
-              inputProps={{ "aria-label": "search" }}
-            />
-          </Search>
+
           <IconButton
             size="large"
             edge="start"
@@ -151,6 +161,19 @@ export default function Navbar() {
           >
             <AdminPanel />
           </IconButton>
+
+          <Search>
+            <SearchIconWrapper>
+              <SearchIcon />
+            </SearchIconWrapper>
+            <StyledInputBase
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              placeholder="Search…"
+              inputProps={{ "aria-label": "search" }}
+            />
+          </Search>
+
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: "none", md: "flex" }, gap: "25px" }}>
             <IconButton

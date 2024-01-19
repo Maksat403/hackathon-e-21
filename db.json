@@ -3,7 +3,7 @@
     {
       "title": "Борщ",
       "description": "Подаётся с чесночными сухариками и сметаной.",
-      "category": "Супы",
+      "category": "Soup",
       "price": 185,
       "weight": "450",
       "picture": "https://staticcontent.mypizza.kg/Dishes/Imperiia_Pitstsyi/v10/Supyi/Borshch/Medium.png?hash=5a4ade6e4833f57818f5149b77dcd2cf",
@@ -15,8 +15,70 @@
       "category": "супы",
       "price": 288,
       "weight": "450",
-      "picture": "https://staticcontent.mypizza.kg/Dishes/Imperiia_Pitstsyi/v39/Supyi/Kitaiskii_sup/Medium.png?hash=83832b1dc158b52d3be21bda9eb30061",
+      "picture": "https://staticcontent.mypizza.kg/Dishes/Imperiia_Pitstsyi/v39/Supyi/Kitaiskii_sup/Medium.png?hash=83832b1dc158b52d3be21bda9eb30061"
+    },
+    {
+      "title": "мммпппппппппддддддддд ",
+      "description": "Подаётся с чесночными сухариками и сметаной.",
+      "category": "soup",
+      "price": 285,
+      "weight": "450",
+      "picture": "https://staticcontent.mypizza.kg/Dishes/Imperiia_Pitstsyi/v10/Supyi/Borshch/Medium.png?hash=5a4ade6e4833f57818f5149b77dcd2cf",
+      "id": 2
+    },
+    {
+      "title": "hyeh",
+      "description": "sdfgsfd",
+      "category": "pizza",
+      "price": 65346,
+      "weight": "3455",
+      "picture": "https://staticcontent.mypizza.kg/Dishes/Imperiia_Pitstsyi/v10/Supyi/Borshch/Medium.png?hash=5a4ade6e4833f57818f5149b77dcd2cf",
       "id": 3
+    },
+    {
+      "title": "gdf",
+      "description": "fdghdghjg",
+      "category": "soup",
+      "price": 364634,
+      "weight": "2325",
+      "picture": "",
+      "id": 4
+    },
+    {
+      "title": "hgdfjgdgjfghjqqqqqq",
+      "description": "fghdfjf",
+      "category": "Pizza",
+      "price": 4567456,
+      "weight": "6534",
+      "picture": "",
+      "id": 5
+    },
+    {
+      "title": "цццц",
+      "description": "ывапары",
+      "category": "уенкенцке",
+      "price": 456748,
+      "weight": "54645",
+      "picture": "ывв",
+      "id": 6
+    },
+    {
+      "title": "ккккккккккк",
+      "description": "кернкен",
+      "category": "гнонг",
+      "price": 456745,
+      "weight": "6745",
+      "picture": "",
+      "id": 7
+    },
+    {
+      "title": "cghj",
+      "description": "hjk",
+      "category": "pizza",
+      "price": 7,
+      "weight": "12",
+      "picture": "hg",
+      "id": 8
     }
   ]
 }
