@@ -8,10 +8,13 @@ import Typography from "@mui/material/Typography";
 import { useNavigate } from "react-router-dom";
 import { useProducts } from "../context/ProductContextProvider";
 import { Container } from "@mui/material";
+import { ADMIN_USER } from "../../helpers/const";
+import { useAuthContext } from "../context/AuthContextProvider";
 
 export default function ProductCard({ item }) {
   const navigate = useNavigate();
   const { deleteProduct } = useProducts();
+  const { user } = useAuthContext();
   return (
     <Card sx={{ maxWidth: 200, m: 2 }}>
       <CardMedia
@@ -37,14 +40,20 @@ export default function ProductCard({ item }) {
           {item.price} сом
         </Typography>
       </CardContent>
-      <CardActions>
-        <Button onClick={() => navigate(`/edit/${item.id}`)} size="small">
-          Изменить
-        </Button>
-        <Button onClick={() => deleteProduct(item.id)} size="small">
-          Удалить
-        </Button>
-      </CardActions>
+      {ADMIN_USER.map((elem, index) =>
+        user && elem.email === user.email ? (
+          <CardActions>
+            <Button onClick={() => navigate(`/edit/${item.id}`)} size="small">
+              Изменить
+            </Button>
+            <Button onClick={() => deleteProduct(item.id)} size="small">
+              Удалить
+            </Button>
+          </CardActions>
+        ) : (
+          ""
+        )
+      )}
     </Card>
   );
 }

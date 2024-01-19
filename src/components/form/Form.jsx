@@ -32,7 +32,7 @@ const Form = ({ isEdit }) => {
     }
     editProduct(product);
     setProduct(init);
-    navigate("/");
+    navigate("/menu");
   };
 
   const handleInput = (e) => {

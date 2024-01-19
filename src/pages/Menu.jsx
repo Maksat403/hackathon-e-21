@@ -4,13 +4,10 @@ import ProductList from "../components/product/ProductList";
 const Menu = () => {
   return (
     <div>
-      <section>
-        <div>
-          <h1>
-            <span>Хорошая кухня создает хороших людей.</span>
-          </h1>
-        </div>
-      </section>
+      <h1>
+        <span>Хорошая кухня создает хороших людей.</span>
+      </h1>
+
       <ProductList />
     </div>
   );
