@@ -1,6 +1,13 @@
 .bag-content {
-  padding-top: 50px;
-  margin-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bag-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .bd-card {
@@ -22,6 +29,9 @@
   padding: 10px;
   box-sizing: border-box;
   border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .bag-buttons button {
@@ -40,4 +50,10 @@
 .centered-text span {
   font-size: 25px;
   margin-bottom: 50px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }

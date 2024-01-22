@@ -5,7 +5,12 @@ export default function PaginationControlled(props) {
   const { page, count, handleChange } = props;
 
   return (
-    <Stack spacing={2} sx={{ marginTop: 2, marginBottom: 2 }}>
+    <Stack
+      spacing={1}
+      sx={{
+        marginBottom: 10,
+      }}
+    >
       <Typography>Page: {page}</Typography>
       <Pagination count={count} page={page} onChange={handleChange} />
     </Stack>

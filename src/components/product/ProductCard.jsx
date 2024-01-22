@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 import { useProducts } from "../context/ProductContextProvider";
 import { ADMIN_USER } from "../../helpers/const";
 import { useAuthContext } from "../context/AuthContextProvider";
-import StarRating from "./StarRating";
+// import StarRating from "./StarRating";
 import Fv from "./favourite";
 export default function ProductCard({ item }) {
   const navigate = useNavigate();
@@ -38,6 +38,10 @@ export default function ProductCard({ item }) {
           {item.title}
         </Typography>
 
+        <Typography gutterBottom variant="h6" component="div">
+          {item.category}
+        </Typography>
+
         <Typography variant="body2" color="text.secondary">
           {item.description}
         </Typography>
@@ -51,17 +55,6 @@ export default function ProductCard({ item }) {
           {item.price} сом
         </Typography>
       </CardContent>
-
-      <CardActions>
-        <Button onClick={() => navigate(`/edit/${item.id}`)} size="small">
-          Изменить
-        </Button>
-        <Button onClick={() => deleteProduct(item.id)} size="small">
-          Удалить
-        </Button>
-      </CardActions>
-      <StarRating id={item.id} />
-      <Fv id={item.id} />
 
       {ADMIN_USER.map((elem, index) =>
         user && elem.email === user.email ? (

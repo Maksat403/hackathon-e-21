@@ -1,7 +1,7 @@
-import { Button, FormControl, TextField } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { useProducts } from "../context/ProductContextProvider";
 import { useNavigate } from "react-router-dom";
+import { Button, FormControl, TextField, MenuItem } from "@mui/material";
 
 const init = {
   title: "",
@@ -11,6 +11,8 @@ const init = {
   weight: "",
   picture: "",
 };
+
+const categories = ["Супы", "Пицца", "Суши"];
 
 const Form = ({ isEdit }) => {
   const { createProduct, oneProduct, editProduct } = useProducts();
@@ -60,7 +62,7 @@ const Form = ({ isEdit }) => {
     }
     createProduct(product);
     setProduct(init);
-    navigate("/");
+    navigate("/menu");
   };
 
   return (
@@ -88,10 +90,17 @@ const Form = ({ isEdit }) => {
         label="категория"
         variant="outlined"
         name="category"
+        select
         fullWidth
         onChange={handleInput}
         value={product.category}
-      />
+      >
+        {categories.map((category) => (
+          <MenuItem key={category} value={category}>
+            {category}
+          </MenuItem>
+        ))}
+      </TextField>
       <TextField
         label="вес"
         variant="outlined"
