@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "../card/card.css";
 import {
   Container,
@@ -11,9 +11,24 @@ import {
   Button,
 } from "@mui/material";
 import { useCardContext } from "../context/CardContextProvider";
+import BuyModal from "./BuyModal";
 
 const CardTable = ({ card }) => {
   const { deleteProductInCard, changeProductCount } = useCardContext();
+  const [isBuyModalOpen, setBuyModalOpen] = useState(false);
+
+  const handleBuyClick = () => {
+    setBuyModalOpen(true);
+  };
+
+  const handleBuyConfirmation = () => {
+    alert("Payment successful! Thank you for your purchase.");
+    setBuyModalOpen(false);
+  };
+
+  const handleBuyCancel = () => {
+    setBuyModalOpen(false);
+  };
   return (
     <div>
       <Container>
@@ -21,7 +36,9 @@ const CardTable = ({ card }) => {
           <div className="header">
             <h1 className="bag-header">Ваша корзина</h1>
             <div className="bag-header-message">
-              <span>У нас бесплатная доставка</span>
+              <div className="centered-text">
+                <span>У нас бесплатная доставка</span>
+              </div>
             </div>
           </div>
           {card.products?.map((elem, index) => (
@@ -54,14 +71,7 @@ const CardTable = ({ card }) => {
                     id="custom-select"
                     sx={{ width: "150px" }}
                     value={elem.count}
-                  >
-                    <MenuItem value={1}>1</MenuItem>
-                    <MenuItem value={2}>2</MenuItem>
-                    <MenuItem value={3}>3</MenuItem>
-                    <MenuItem value={4}>4</MenuItem>
-                    <MenuItem value={5}>5</MenuItem>
-                    <MenuItem value={""}>Много есть тоже вредно{")"}</MenuItem>
-                  </Select>
+                  ></Select>
                 </Box>
                 <Box sx={{ display: "flex", flexDirection: "column", m: 3 }}>
                   <Typography sx={{ fontSize: "25px" }}>
@@ -77,7 +87,11 @@ const CardTable = ({ card }) => {
                     onClick={() => deleteProductInCard(elem.item.id)}
                     variant="contained"
                     size="medium"
-                    sx={{ m: "5 0" }}
+                    sx={{
+                      m: "5 0",
+                      backgroundColor: "#F93E03",
+                      color: "#FFFFFF",
+                    }}
                   >
                     Удалить из корзины
                   </Button>
@@ -99,13 +113,28 @@ const CardTable = ({ card }) => {
               variant="h6"
               component="div"
             >
-              Итого к оплате:{card?.totalPrice}
-              <Button variant="contained" sx={{ height: "20px", p: 2 }}>
+              Итого к оплате: {card?.totalPrice}
+              <Button
+                id="btn1"
+                variant="contained"
+                onClick={handleBuyClick}
+                sx={{
+                  height: "20px",
+                  p: 2,
+                  backgroundColor: "#F93E03",
+                  color: "#FFFFFF",
+                }}
+              >
                 Купить
               </Button>
             </Typography>
           </Box>
         </div>
+        <BuyModal
+          isOpen={isBuyModalOpen}
+          onClose={handleBuyCancel}
+          onBuy={handleBuyConfirmation}
+        />
       </Container>
     </div>
   );

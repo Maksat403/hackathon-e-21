@@ -5,6 +5,8 @@ export const ACTION_PRODUCTS = {
   GET_ONE_PRODUCT: "GET_ONE_PRODUCT",
 };
 
+export const ADMIN = "admin@admin.com";
+
 export const ACTIONS_USER = {
   CHECK_USER: "CHECK_USER",
 };

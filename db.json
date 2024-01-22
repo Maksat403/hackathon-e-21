@@ -3,7 +3,7 @@
     {
       "title": "Борщ1",
       "description": "Подаётся с чесночными сухариками и сметаной.",
-      "category": "Супы",
+      "category": "soup",
       "price": 185,
       "weight": "450",
       "picture": "https://staticcontent.mypizza.kg/Dishes/Imperiia_Pitstsyi/v10/Supyi/Borshch/Medium.png?hash=5a4ade6e4833f57818f5149b77dcd2cf",
@@ -12,11 +12,42 @@
     {
       "title": "Китайский суп",
       "description": "Говяжий бульон, говядина, древесные грибы, огурцы, стебель сельдерея, имбирь, перец чили, фунчоза.",
-      "category": "супы",
+      "category": "soup",
       "price": 288,
       "weight": "450",
-      "picture": "https://staticcontent.mypizza.kg/Dishes/Imperiia_Pitstsyi/v39/Supyi/Kitaiskii_sup/Medium.png?hash=83832b1dc158b52d3be21bda9eb30061",
-      "id": 3
+      "picture": "https://staticcontent.mypizza.kg/Dishes/Imperiia_Pitstsyi/v39/Supyi/Kitaiskii_sup/Medium.png?hash=83832b1dc158b52d3be21bda9eb30061"
+    },
+    {
+      "title": "Барбекю 30см",
+      "description": "Сытная домашняя пицца с соусом барбекю, куриным филе, колбасками, грибами, томатами и маринованными огурчиками.",
+      "category": "pizza",
+      "price": 498,
+      "weight": "700",
+      "picture": "https://staticcontent.mypizza.kg/Dishes/Imperiia_Pitstsyi/v10/Pitstsa_30sm/Barbekiu_30sm/Medium.png?hash=b35d2b33c43f3083ad5154b1c8ab1859"
+    },
+    {
+      "title": "4 Сыра 30см",
+      "description": "Пицца-соус, сыры: моцарелла, эмменталь, дорблю, пармезан.",
+      "category": "pizza",
+      "price": 598,
+      "weight": "550",
+      "picture": "https://staticcontent.mypizza.kg/Dishes/Imperiia_Pitstsyi/v45/Pitstsa_30sm/4_Syira_30sm/Medium.png?hash=f530c2fc1726d73286f6656fd56d59ae"
+    },
+    {
+      "title": "Вегетарианская 30см",
+      "description": "Пицца-соус, сыр «Моцарелла», помидоры, кукуруза, маслины, шампиньоны, болгарский перец, зелень, лук.",
+      "category": "pizza",
+      "price": 498,
+      "weight": "700",
+      "picture": "https://staticcontent.mypizza.kg/Dishes/Imperiia_Pitstsyi/v32/Pitstsa_30sm/Vegetarianskaia_30sm/Medium.png?hash=5696140c19c5358cc13389a0122876fd"
+    },
+    {
+      "title": "Деревенская 30см",
+      "description": "Пицца-соус, сыр моцарелла, маринованная говядина, копчёная курица, шампиньоны, чеснок, лук, зелень.",
+      "category": "pizza",
+      "price": 588,
+      "weight": "670",
+      "picture": "https://staticcontent.mypizza.kg/Dishes/Imperiia_Pitstsyi/v10/Pitstsa_30sm/Derevenskaia_30sm/Medium.png?hash=ed1e51a8a26eb31dfda14430d67fd2b6"
     }
   ]
 }

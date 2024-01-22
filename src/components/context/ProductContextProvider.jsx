@@ -2,9 +2,9 @@ import React from "react";
 import axios from "axios";
 import { ACTION_PRODUCTS, API_PRODUCTS } from "../../helpers/const";
 import { createContext, useContext, useReducer } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const productContext = createContext();
-
 export const useProducts = () => useContext(productContext);
 
 const INIT_STATE = {
@@ -15,7 +15,7 @@ const INIT_STATE = {
 const reducer = (state, action) => {
   switch (action.type) {
     case ACTION_PRODUCTS.GET_PRODUCTS:
-      return { ...state, products: action.payload.data };
+      return { ...state, products: action.payload.data};
     case ACTION_PRODUCTS.GET_ONE_PRODUCT:
       return { ...state, oneProduct: action.payload };
     default:
@@ -25,26 +25,29 @@ const reducer = (state, action) => {
 
 const ProductContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, INIT_STATE);
+  const location = useLocation();
+  const navigate = useNavigate()
 
   //! CREATE
   const createProduct = async (newProduct) => {
     try {
       await axios.post(API_PRODUCTS, newProduct);
     } catch (error) {
-      console.error();
+      console.error(error);
     }
   };
 
   //! READ
   const getProducts = async () => {
     try {
-      let res = await axios(API_PRODUCTS);
+      let res = await axios(`${API_PRODUCTS}/${window.location.search}`);
       dispatch({
         type: ACTION_PRODUCTS.GET_PRODUCTS,
         payload: res,
       });
     } catch (error) {
       console.error();
+      console.log('worked');
     }
   };
 
@@ -84,12 +87,25 @@ const ProductContextProvider = ({ children }) => {
     }
   };
 
+  //! Фильтрация
+  function fetchByParams(query, value){
+    const paramsFromUrl = new URLSearchParams(location.search);
+    if(value === "all"){
+      paramsFromUrl.delete(query);
+    } else {
+      paramsFromUrl.set(query, value);
+    };
+    const url = `${location.pathname}?${paramsFromUrl.toString()}`;
+    navigate(url);
+  }
+
   const values = {
     createProduct,
     getProducts,
     getOneProduct,
     editProduct,
     deleteProduct,
+    fetchByParams,
     products: state.products,
     oneProduct: state.oneProduct,
   };

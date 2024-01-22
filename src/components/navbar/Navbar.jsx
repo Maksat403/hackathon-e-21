@@ -10,9 +10,10 @@ import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
 import AccountCircle from "@mui/icons-material/AccountCircle";
-import { Link, useNavigate } from "react-router-dom";
 import AdminPanel from "../admin/AdminPanel";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import { Link, useNavigate, useSearchParams } from "react-router-dom";
+import { useProducts } from "../context/ProductContextProvider";
 import { Avatar, Tooltip } from "@mui/material";
 import { useAuthContext } from "../context/AuthContextProvider";
 import { ADMIN_USER } from "../../helpers/const";
@@ -57,6 +58,23 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function Navbar() {
+  //! Поиск
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [search, setSearch] = React.useState(searchParams.get("q") || "");
+  const { getProducts } = useProducts();
+
+  React.useEffect(() => {
+    setSearchParams({
+      q: search,
+    });
+  }, [search]);
+
+  React.useEffect(() => {
+    getProducts();
+  }, [searchParams]);
+
+  //? setSearch вызван в инпуте StyledInputBase
+
   const { user, logOut } = useAuthContext();
 
   const handleLogOut = () => {
@@ -119,7 +137,7 @@ export default function Navbar() {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+      <AppBar position="static" sx={{ backgroundColor: "#F93E03" }}>
         <Toolbar>
           <div style={{ display: "flex", gap: 25 }}>
             <Typography
@@ -139,19 +157,31 @@ export default function Navbar() {
               sx={{ display: { xs: "none", sm: "block" } }}
               onClick={() => navigate("/menu")}
             >
-              Меню
+              MENU
             </Typography>
           </div>
+
           <Search>
             <SearchIconWrapper>
               <SearchIcon />
             </SearchIconWrapper>
             <StyledInputBase
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
               placeholder="Search…"
               inputProps={{ "aria-label": "search" }}
             />
           </Search>
-
+          <IconButton
+            size="large"
+            edge="start"
+            color="inherit"
+            aria-label="open drawer"
+            sx={{ mr: 2 }}
+            onClick={() => navigate("/admin")}
+          >
+            <AdminPanel />
+          </IconButton>
           {ADMIN_USER.map((elem, index) =>
             user && elem.email === user.email ? (
               <IconButton
@@ -169,6 +199,7 @@ export default function Navbar() {
               ""
             )
           )}
+
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: "none", md: "flex" }, gap: "25px" }}>
             <IconButton
