@@ -9,6 +9,8 @@ import InputBase from "@mui/material/InputBase";
 import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
+import MicIcon from "@mui/icons-material/Mic";
+import ClearIcon from "@mui/icons-material/Clear"; // Import ClearIcon
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import AdminPanel from "../admin/AdminPanel";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
@@ -58,31 +60,17 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function Navbar() {
-  //! Поиск
   const [searchParams, setSearchParams] = useSearchParams();
   const [search, setSearch] = React.useState(searchParams.get("q") || "");
   const { getProducts } = useProducts();
-
-  React.useEffect(() => {
-    setSearchParams({
-      q: search,
-    });
-  }, [search]);
-
-  React.useEffect(() => {
-    getProducts();
-  }, [searchParams]);
-
-  //? setSearch вызван в инпуте StyledInputBase
-
   const { user, logOut } = useAuthContext();
+  const navigate = useNavigate();
 
   const handleLogOut = () => {
     handleMenuClose();
     logOut();
   };
 
-  const navigate = useNavigate();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
@@ -135,6 +123,31 @@ export default function Navbar() {
     </Menu>
   );
 
+  const recognition = new window.webkitSpeechRecognition();
+  recognition.continuous = false;
+  recognition.lang = "ru-RU";
+
+  const startVoiceSearch = () => {
+    recognition.start();
+  };
+
+  recognition.onresult = (event) => {
+    const transcript = event.results[0][0].transcript;
+    setSearch(transcript);
+    setSearchParams({
+      q: transcript,
+    });
+    getProducts();
+  };
+
+  const clearSearch = () => {
+    setSearch("");
+    setSearchParams({
+      q: "",
+    });
+    getProducts();
+  };
+
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar
@@ -176,6 +189,24 @@ export default function Navbar() {
               placeholder="Поиск…"
               inputProps={{ "aria-label": "search" }}
             />
+            <IconButton
+              size="large"
+              edge="end"
+              color="inherit"
+              aria-label="mic"
+              onClick={startVoiceSearch}
+            >
+              <MicIcon />
+            </IconButton>
+            <IconButton
+              size="large"
+              edge="end"
+              color="inherit"
+              aria-label="clear"
+              onClick={clearSearch}
+            >
+              <ClearIcon />
+            </IconButton>
           </Search>
 
           {ADMIN_USER.map((elem, index) =>

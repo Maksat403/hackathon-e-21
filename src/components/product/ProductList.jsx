@@ -10,7 +10,7 @@ const ProductList = () => {
 
   useEffect(() => {
     getProducts();
-  }, [getProducts]); // Add getProducts as a dependency
+  }, []);
 
   const [page, setPage] = useState(1);
   const handleChange = (event, value) => {

@@ -7,7 +7,6 @@ const Menu = () => {
     <div>
       <section>
         <div>
-          <ImageSlider />
           <h1
             style={{
               textAlign: "center",
@@ -30,6 +29,7 @@ const Menu = () => {
       </section>
 
       <ProductList />
+      <ImageSlider />
     </div>
   );
 };

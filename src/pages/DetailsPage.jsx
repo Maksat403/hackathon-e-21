@@ -12,7 +12,6 @@ const DetailsPage = () => {
   const navigate = useNavigate();
   const { addProductToCard, checkProductInCard } = useCardContext();
   const { oneProduct, getOneProduct } = useProducts();
-  console.log(oneProduct);
 
   const { id } = useParams();
 

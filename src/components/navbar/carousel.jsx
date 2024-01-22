@@ -188,19 +188,19 @@ function ImageSlider() {
             href="tel:+772510707"
             style={{ textDecoration: "none", color: "#555" }}
           >
-            0(772)510707
+            0(772) 510 707 //
           </a>{" "}
           <a
             href="tel:+551510707"
             style={{ textDecoration: "none", color: "#555" }}
           >
-            0(551)510707
+            0(551) 510 707 //
           </a>{" "}
           <a
             href="tel:+704510707"
             style={{ textDecoration: "none", color: "#555" }}
           >
-            0(704)510707
+            0(704) 510 707
           </a>
         </Typography>
       </Box>

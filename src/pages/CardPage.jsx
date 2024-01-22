@@ -6,7 +6,6 @@ import CardTabel from "../components/card/CardTabel";
 
 const CardPage = () => {
   const { card } = useCardContext();
-  console.log(card);
   const navigate = useNavigate();
   return (
     <>
