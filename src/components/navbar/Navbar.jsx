@@ -10,7 +10,7 @@ import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
 import MicIcon from "@mui/icons-material/Mic";
-import ClearIcon from "@mui/icons-material/Clear"; // Import ClearIcon
+import ClearIcon from "@mui/icons-material/Clear";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import AdminPanel from "../admin/AdminPanel";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
@@ -65,6 +65,14 @@ export default function Navbar() {
   const { getProducts } = useProducts();
   const { user, logOut } = useAuthContext();
   const navigate = useNavigate();
+
+  React.useEffect(() => {
+    setSearchParams({ q: search });
+  }, [search]);
+
+  React.useEffect(() => {
+    getProducts();
+  }, [searchParams]);
 
   const handleLogOut = () => {
     handleMenuClose();
