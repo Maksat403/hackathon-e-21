@@ -66,7 +66,7 @@ export default function Navbar() {
 
   const navigate = useNavigate();
   const [anchorEl, setAnchorEl] = React.useState(null);
-  const [setMobileMoreAnchorEl] = React.useState(null);
+  const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
   const isMenuOpen = Boolean(anchorEl);
 
