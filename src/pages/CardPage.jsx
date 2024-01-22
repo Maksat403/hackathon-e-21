@@ -18,7 +18,7 @@ const CardPage = () => {
             <div className="header">
               <h1 className="bag-header">Похоже тут ещё пусто</h1>
               <div className="bag-header-message">
-                <span style={{ marginLeft: "8px" }}>
+                <span style={{ marginLeft: "8px", fontSize: "19px" }}>
                   Самое время выбрать вкусности
                 </span>
               </div>

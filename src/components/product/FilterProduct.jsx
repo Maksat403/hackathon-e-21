@@ -29,10 +29,14 @@ const FilterProduct = () => {
             name="radio-buttons-group"
             onChange={(e) => fetchByParams("category", e.target.value)}
           >
-            <FormControlLabel value="all" control={<Radio />} label="All" />
-            <FormControlLabel value="soup" control={<Radio />} label="Soup" />
-            <FormControlLabel value="pizza" control={<Radio />} label="Pizza" />
-            <FormControlLabel value="sushi" control={<Radio />} label="Sushi" />
+            <FormControlLabel
+              value="all"
+              control={<Radio />}
+              label="Без фильтра"
+            />
+            <FormControlLabel value="Супы" control={<Radio />} label="Супы" />
+            <FormControlLabel value="Пицца" control={<Radio />} label="Пицца" />
+            <FormControlLabel value="Суши" control={<Radio />} label="Суши" />
           </RadioGroup>
         </FormControl>
       </Paper>

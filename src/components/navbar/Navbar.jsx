@@ -84,7 +84,7 @@ export default function Navbar() {
 
   const navigate = useNavigate();
   const [anchorEl, setAnchorEl] = React.useState(null);
-  const [setMobileMoreAnchorEl] = React.useState(null);
+  const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
   const isMenuOpen = Boolean(anchorEl);
 
@@ -137,7 +137,12 @@ export default function Navbar() {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static" sx={{ backgroundColor: "#F93E03" }}>
+      <AppBar
+        position="static"
+        sx={{
+          background: "linear-gradient(95deg, #333333 10%, #000000 90%)",
+        }}
+      >
         <Toolbar>
           <div style={{ display: "flex", gap: 25 }}>
             <Typography
@@ -147,7 +152,7 @@ export default function Navbar() {
               sx={{ display: { xs: "none", sm: "block" } }}
               onClick={() => navigate("/")}
             >
-              ZERNO
+              FLAVORIZE
             </Typography>
 
             <Typography
@@ -157,7 +162,7 @@ export default function Navbar() {
               sx={{ display: { xs: "none", sm: "block" } }}
               onClick={() => navigate("/menu")}
             >
-              MENU
+              Меню
             </Typography>
           </div>
 
@@ -168,20 +173,11 @@ export default function Navbar() {
             <StyledInputBase
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              placeholder="Search…"
+              placeholder="Поиск…"
               inputProps={{ "aria-label": "search" }}
             />
           </Search>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="open drawer"
-            sx={{ mr: 2 }}
-            onClick={() => navigate("/admin")}
-          >
-            <AdminPanel />
-          </IconButton>
+
           {ADMIN_USER.map((elem, index) =>
             user && elem.email === user.email ? (
               <IconButton

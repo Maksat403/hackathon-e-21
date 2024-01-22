@@ -52,13 +52,17 @@ const DetailsPage = () => {
 
               {checkProductInCard(oneProduct.id) ? (
                 <div>
-                  <Button variant="contained" disabled sx={{ mr: 2 }}>
+                  <Button
+                    variant="contained"
+                    disabled
+                    sx={{ m: "3px", p: "12px 15px" }}
+                  >
                     Добавить в корзину
                   </Button>
                   <Button
                     onClick={() => navigate("/card")}
                     variant="contained"
-                    sx={{ mr: 2 }}
+                    sx={{ m: "15px", p: "10px" }}
                   >
                     Перейти к корзине
                   </Button>
@@ -67,7 +71,7 @@ const DetailsPage = () => {
                 <Button
                   onClick={() => addProductToCard(oneProduct)}
                   variant="contained"
-                  sx={{ mr: 2 }}
+                  sx={{ m: "3px" }}
                 >
                   Добавить в корзину
                 </Button>

@@ -13,7 +13,7 @@ export const ProtectedRouts = () => {
   const { user } = useAuthContext();
 
   const isAdmin = () => {
-    if (user.email === "chadface@gmail.com") {
+    if (user && user.email === "chadface@gmail.com") {
       return true;
     }
     return false;

@@ -16,7 +16,6 @@ import BuyModal from "./BuyModal";
 const CardTable = ({ card }) => {
   const { deleteProductInCard, changeProductCount } = useCardContext();
   const [isBuyModalOpen, setBuyModalOpen] = useState(false);
-
   const handleBuyClick = () => {
     setBuyModalOpen(true);
   };
@@ -36,9 +35,7 @@ const CardTable = ({ card }) => {
           <div className="header">
             <h1 className="bag-header">Ваша корзина</h1>
             <div className="bag-header-message">
-              <div className="centered-text">
-                <span>У нас бесплатная доставка</span>
-              </div>
+              <span>У нас бесплатная доставка</span>
             </div>
           </div>
           {card.products?.map((elem, index) => (
@@ -46,8 +43,8 @@ const CardTable = ({ card }) => {
               <Card
                 sx={{
                   display: "flex",
-                  marginTop: "100px",
-                  width: "570px",
+                  marginTop: "70px",
+                  width: "670px",
                   justifyContent: "space-between",
                 }}
               >
@@ -71,7 +68,14 @@ const CardTable = ({ card }) => {
                     id="custom-select"
                     sx={{ width: "150px" }}
                     value={elem.count}
-                  ></Select>
+                  >
+                    <MenuItem value={1}>1</MenuItem>
+                    <MenuItem value={2}>2</MenuItem>
+                    <MenuItem value={3}>3</MenuItem>
+                    <MenuItem value={4}>4</MenuItem>
+                    <MenuItem value={5}>5</MenuItem>
+                    <MenuItem value={6}>6</MenuItem>
+                  </Select>
                 </Box>
                 <Box sx={{ display: "flex", flexDirection: "column", m: 3 }}>
                   <Typography sx={{ fontSize: "25px" }}>
@@ -87,11 +91,7 @@ const CardTable = ({ card }) => {
                     onClick={() => deleteProductInCard(elem.item.id)}
                     variant="contained"
                     size="medium"
-                    sx={{
-                      m: "5 0",
-                      backgroundColor: "#F93E03",
-                      color: "#FFFFFF",
-                    }}
+                    sx={{ m: "4 0" }}
                   >
                     Удалить из корзины
                   </Button>
@@ -113,17 +113,11 @@ const CardTable = ({ card }) => {
               variant="h6"
               component="div"
             >
-              Итого к оплате: {card?.totalPrice}
+              Итого к оплате:{card?.totalPrice}
               <Button
-                id="btn1"
-                variant="contained"
                 onClick={handleBuyClick}
-                sx={{
-                  height: "20px",
-                  p: 2,
-                  backgroundColor: "#F93E03",
-                  color: "#FFFFFF",
-                }}
+                variant="contained"
+                sx={{ height: "20px", p: 2, ml: 5 }}
               >
                 Купить
               </Button>

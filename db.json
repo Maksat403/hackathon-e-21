@@ -1,53 +1,157 @@
 {
   "products": [
     {
+      "title": "Ашлям-Фу",
+      "description": "Ашлям-фу с говядиной. Холодный острый овощной суп с крахмалом и лапшой. Подаётся с приправой Лаза.",
+      "category": "Супы",
+      "price": 168,
+      "weight": "500",
+      "picture": "https://staticcontent.mypizza.kg/Dishes/Imperiia_Pitstsyi/v10/Supyi/Ashliam-Fu/Medium.png?hash=3dfdb0c55b75043851d6175451fe6e4a",
+      "id": 1
+    },
+    {
       "title": "Борщ",
       "description": "Подаётся с чесночными сухариками и сметаной.",
-      "category": "soup",
-      "price": 185,
-      "weight": "450",
+      "category": "Супы",
+      "price": 318,
+      "weight": "430",
       "picture": "https://staticcontent.mypizza.kg/Dishes/Imperiia_Pitstsyi/v10/Supyi/Borshch/Medium.png?hash=5a4ade6e4833f57818f5149b77dcd2cf",
-      "id": 1
+      "id": 2
     },
     {
       "title": "Китайский суп",
       "description": "Говяжий бульон, говядина, древесные грибы, огурцы, стебель сельдерея, имбирь, перец чили, фунчоза.",
-      "category": "soup",
+      "category": "Супы",
       "price": 288,
       "weight": "450",
-      "picture": "https://staticcontent.mypizza.kg/Dishes/Imperiia_Pitstsyi/v39/Supyi/Kitaiskii_sup/Medium.png?hash=83832b1dc158b52d3be21bda9eb30061"
+      "picture": "https://staticcontent.mypizza.kg/Dishes/Imperiia_Pitstsyi/v39/Supyi/Kitaiskii_sup/Medium.png?hash=83832b1dc158b52d3be21bda9eb30061",
+      "id": 3
     },
     {
-      "title": "Барбекю 30см",
+      "title": "Кукси",
+      "description": "Национальное блюдо корейской кухни. Бульон мури, яичная лапша, омлет, огурцы, помидоры, говядина, кунжут. Подаётся с приправой лаза.",
+      "category": "Супы",
+      "price": 268,
+      "weight": "500",
+      "picture": "https://staticcontent.mypizza.kg/Dishes/Imperiia_Pitstsyi/v10/Supyi/Kuksi/Medium.png?hash=8317e270de05b3e9f73ed63bf8f90fa0",
+      "id": 4
+    },
+    {
+      "title": "Острый Суп Том Ям",
+      "description": "Острый суп по-тайски. Куриное филе, помидоры, грибы вёшенки, креветки, шампиньоны, кинза, лимон. Подается с рисом. ТОМ-ЯМ",
+      "category": "Супы",
+      "price": 398,
+      "weight": "450",
+      "picture": "https://staticcontent.mypizza.kg/Dishes/Imperiia_Pitstsyi/v156/Soup/Ostryii_Sup_Tom_Iam/Medium.png?hash=509c53783e70d1fd52432dd8cba5e040",
+      "id": 5
+    },
+    {
+      "title": "Барбекю 40см",
       "description": "Сытная домашняя пицца с соусом барбекю, куриным филе, колбасками, грибами, томатами и маринованными огурчиками.",
-      "category": "pizza",
-      "price": 498,
-      "weight": "700",
-      "picture": "https://staticcontent.mypizza.kg/Dishes/Imperiia_Pitstsyi/v10/Pitstsa_30sm/Barbekiu_30sm/Medium.png?hash=b35d2b33c43f3083ad5154b1c8ab1859"
+      "category": "Пицца",
+      "price": 798,
+      "weight": "1160",
+      "picture": "https://staticcontent.mypizza.kg/Dishes/Imperiia_Pitstsyi/v10/Pitstsa_40sm/Barbekiu_40sm/Medium.png?hash=3b4522fe32379bc2ad5e9649e2faa199",
+      "id": 6
     },
     {
-      "title": "4 Сыра 30см",
-      "description": "Пицца-соус, сыры: моцарелла, эмменталь, дорблю, пармезан.",
-      "category": "pizza",
-      "price": 598,
-      "weight": "550",
-      "picture": "https://staticcontent.mypizza.kg/Dishes/Imperiia_Pitstsyi/v45/Pitstsa_30sm/4_Syira_30sm/Medium.png?hash=f530c2fc1726d73286f6656fd56d59ae"
+      "title": "Гасконская 40см",
+      "description": "Пицца Гасконская. Пицца-соус, сыр моцарелла, копчёная курица, шампиньоны, болгарский перец, помидоры, кукуруза, майонез, зелень.",
+      "category": "Пицца",
+      "price": 838,
+      "weight": "1310",
+      "picture": "https://staticcontent.mypizza.kg/Dishes/Imperiia_Pitstsyi/v10/Pitstsa_40sm/Gaskonskaia_40sm/Medium.png?hash=514bf544f07bdb17b58cf98c3c1f1610",
+      "id": 7
     },
     {
-      "title": "Вегетарианская 30см",
-      "description": "Пицца-соус, сыр «Моцарелла», помидоры, кукуруза, маслины, шампиньоны, болгарский перец, зелень, лук.",
-      "category": "pizza",
-      "price": 498,
-      "weight": "700",
-      "picture": "https://staticcontent.mypizza.kg/Dishes/Imperiia_Pitstsyi/v32/Pitstsa_30sm/Vegetarianskaia_30sm/Medium.png?hash=5696140c19c5358cc13389a0122876fd"
+      "title": "Домашняя 40см",
+      "description": "Пицца-соус, сыр моцарелла, ветчина, помидоры, шампиньоны, зелень",
+      "category": "Пицца",
+      "price": 618,
+      "weight": "990",
+      "picture": "https://staticcontent.mypizza.kg/Dishes/Imperiia_Pitstsyi/v1/Pitstsa_40sm/Domashniaia_40sm/Medium.png?hash=3ee9059fce99b636396b98e16a0aa519",
+      "id": 8
     },
     {
-      "title": "Деревенская 30см",
-      "description": "Пицца-соус, сыр моцарелла, маринованная говядина, копчёная курица, шампиньоны, чеснок, лук, зелень.",
-      "category": "pizza",
-      "price": 588,
-      "weight": "670",
-      "picture": "https://staticcontent.mypizza.kg/Dishes/Imperiia_Pitstsyi/v10/Pitstsa_30sm/Derevenskaia_30sm/Medium.png?hash=ed1e51a8a26eb31dfda14430d67fd2b6"
+      "title": "Классика 40см",
+      "description": "Пицца Классика. Пицца-соус, сыр моцарелла, ветчина, салями, шампиньоны.",
+      "category": "Пицца",
+      "price": 748,
+      "weight": "1065",
+      "picture": "https://staticcontent.mypizza.kg/Dishes/Imperiia_Pitstsyi/v1/Pitstsa_40sm/Klassika_40sm/Medium.png?hash=34d517ee450da824b32fa6245a7e5991",
+      "id": 9
+    },
+    {
+      "title": "Обжорка 40см",
+      "description": "Пицца Обжорка. Пицца-соус, говяжий фарш, сыр моцарелла, помидоры, майонез, кетчуп, зелень, маринованные огурцы",
+      "category": "Пицца",
+      "price": 998,
+      "weight": "1390",
+      "picture": "https://staticcontent.mypizza.kg/Dishes/Imperiia_Pitstsyi/v1/Pitstsa_40sm/Obzhorka_40sm/Medium.png?hash=0fb89dbac3094a820b817af8321d8937",
+      "id": 10
+    },
+    {
+      "title": "По-тайски 40см",
+      "description": "Соус пад-тай, сыр моцарелла, куриное филе маринованное, грибы вёшeнки , лук маринованный, перчики халапеньо, кинза.",
+      "category": "Пицца",
+      "price": 898,
+      "weight": "1200",
+      "picture": "https://staticcontent.mypizza.kg/Dishes/Imperiia_Pitstsyi/v10/Pitstsa_40sm/Po-taiski_40sm/Medium.png?hash=792a40246e4fc56be7608e9a13d03443",
+      "id": 11
+    },
+    {
+      "title": "Цезарь 40см",
+      "description": "Фирменный соус «Цезарь», сыр «Пармезан», куриная грудка, листья пекинской капусты, оливки.",
+      "category": "Пицца",
+      "price": 958,
+      "weight": "1000",
+      "picture": "https://staticcontent.mypizza.kg/Dishes/Imperiia_Pitstsyi/v168/Pitstsa_40sm/Tsezar_40sm/Medium.png?hash=899dc7ffa6cfcd02a3fe4ad067bf2e85",
+      "id": 12
+    },
+    {
+      "title": "Запеченный Ролл Каджи Ёми",
+      "description": "Крабовые палочки, крем-чиз, кукуруза, зелёный лук, огурец, омлет, соус хот.",
+      "category": "Суши",
+      "price": 238,
+      "weight": "210",
+      "picture": "https://staticcontent.mypizza.kg/Dishes/Imperiia_Pitstsyi/v10/Rollyi/Zapechennyii_Roll_Kadzhi_mi/Medium.png?hash=f5a313d64ad3590486fc0358ab9200eb",
+      "id": 13
+    },
+    {
+      "title": "Запеченный Ролл Сакура",
+      "description": "Крем-чиз, крабовые палочки, кунжут, томаго, унаги соус, тобико.",
+      "category": "Суши",
+      "price": 278,
+      "weight": "250",
+      "picture": "https://staticcontent.mypizza.kg/Dishes/Imperiia_Pitstsyi/v156/Rolldor/Zapechennyii_Roll_Sakura/Medium.png?hash=f35b72d0bb947304ebfb02945a949c03",
+      "id": 14
+    },
+    {
+      "title": "Калифорния ролл",
+      "description": "Крабовые палочки, тобико, майонез, огурец, омлет.",
+      "category": "Суши",
+      "price": 298,
+      "weight": "170",
+      "picture": "https://staticcontent.mypizza.kg/Dishes/Imperiia_Pitstsyi/v10/Rollyi/Kaliforniia_roll/Medium.png?hash=4ba7e0bf99d15216b52a5582e582f9da",
+      "id": 15
+    },
+    {
+      "title": "Касуми ролл",
+      "description": "Жареный лосось, крабовые палочки, стружка тунца, майонез.",
+      "category": "Суши",
+      "price": 298,
+      "weight": "165",
+      "picture": "https://staticcontent.mypizza.kg/Dishes/Imperiia_Pitstsyi/v1/Rollyi/Kasumi_roll/Medium.png?hash=d0cd623007e8a496972451d15181c82b",
+      "id": 16
+    },
+    {
+      "title": "Киото",
+      "description": "Икра летучей рыбы «Тобико», крабовые палочки, омлет, соус «Спайс», огурец, майонез.",
+      "category": "Суши",
+      "price": 288,
+      "weight": "220",
+      "picture": "https://staticcontent.mypizza.kg/Dishes/Imperiia_Pitstsyi/v40/Rollyi/Kioto/Medium.png?hash=4c33edc20dac5a3991bba093e0fb579e",
+      "id": 17
     }
   ]
 }
